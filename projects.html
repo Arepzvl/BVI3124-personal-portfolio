@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Personal Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Primary Navigation">
+      <a href="index.html" class="brand">Portfolio</a>
+      <button type="button" id="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <h1>Projects & Work Samples</h1>
+      <p>Selected engineering technology, automation, IoT, and PLC projects.</p>
+      <div class="filter-buttons" role="group" aria-label="Filter projects by category">
+        <button type="button" class="filter-btn active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="automation">Automation & IoT</button>
+        <button type="button" class="filter-btn" data-filter="electronics">Electronics & Circuits</button>
+      </div>
+    </section>
+
+    <section class="projects-grid">
+      <article class="project-card" data-category="automation">
+        <img src="images/project-iot.jpg" alt="Flexible Manufacturing System Headlamp Installation">
+        <h2>FMS: VAC Car Headlamp Installation</h2>
+        <p><strong>Problem Statement:</strong> Integrating PLC, collaborative robot, HMI, and conveyor subsystems safely with clear commissioning verification and fault tracking.</p>
+        <p><strong>Role:</strong> Report / Helper & Commissioning Engineer (Group Project)</p>
+        <p><strong>Tools Used:</strong> Omron PLC, Omron TM5-700 Cobot, Mitsubishi HMI, VFD & Conveyor</p>
+        <p><strong>Outcome:</strong> Completed prestart inspection, risk analysis, I/O mapping, operational sequence, and deviation/punch list documentation.</p>
+        <a href="docs/ReportProjectFMS.pdf" class="project-link" target="_blank" rel="noopener noreferrer">View Commissioning Report</a>
+      </article>
+
+      <article class="project-card" data-category="automation">
+        <img src="images/project-circuit.jpg" alt="Room Ambient Monitor IoT System">
+        <h2>Room Ambient Monitor (IoT)</h2>
+        <p><strong>Problem Statement:</strong> Monitoring room temperature, humidity, and door proximity continuously with threshold alerts and historical logging.</p>
+        <p><strong>Role:</strong> System & IoT Developer (Group Project)</p>
+        <p><strong>Tools Used:</strong> ESP32, DHT11, HC-SR04 Ultrasonic, LCD, Google Sheets, Looker Studio</p>
+        <p><strong>Outcome:</strong> Automated time-based sensor logging to Google Sheets, alarm code status (0, 101, 201), and visual dashboard monitoring.</p>
+        <a href="docs/RoomAmbientMonitorReport.pdf" class="project-link" target="_blank" rel="noopener noreferrer">View Project Report</a>
+      </article>
+
+      <article class="project-card" data-category="electronics">
+        <img src="images/project-web.jpg" alt="PLC Analog Control and Signal Dispatcher">
+        <h2>PLC Analog Control & Signal Dispatcher</h2>
+        <p><strong>Problem Statement:</strong> Converting and dispatching analog voltage signals accurately with mode selection, voltage-level lamps, and emergency interlocks.</p>
+        <p><strong>Role:</strong> PLC Programming & Testing Student</p>
+        <p><strong>Tools Used:</strong> Omron CJ2M, CJ1W-MAD42 Analog Module, CX-Programmer, Ladder & Function Block</p>
+        <p><strong>Outcome:</strong> Verified analog-to-digital scaling and implemented Manual/Auto output control, lamp indicators, and E-Stop safety logic.</p>
+        <a href="docs/Lab2PLCAnalogControl.pdf" class="project-link" target="_blank" rel="noopener noreferrer">View Lab Report</a>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year">2026</span> Arif Akmal Bin Shahrul Nizam. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
