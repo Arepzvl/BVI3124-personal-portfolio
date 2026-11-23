@@ -232,3 +232,4 @@ function initContactFormValidation() {
     window.location.href = `mailto:${recipient}?subject=${mailSubject}&body=${mailBody}`;
   });
 }
+// Validate inputs, then open default email client via mailto: link
