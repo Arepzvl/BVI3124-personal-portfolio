@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Personal Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Primary Navigation">
+      <a href="index.html" class="brand">Portfolio</a>
+      <button type="button" id="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <h1>Contact Me</h1>
+      <p>Get in touch for industrial training, engineering technology opportunities, or collaborations.</p>
+    </section>
+
+    <section class="contact-layout">
+      <div class="contact-form-box">
+        <h2>Send a Message</h2>
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+            <small class="error-msg" id="name-error" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="name@example.com">
+            <small class="error-msg" id="email-error" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Topic or inquiry">
+            <small class="error-msg" id="subject-error" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..."></textarea>
+            <small class="error-msg" id="message-error" aria-live="polite"></small>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <aside class="contact-details">
+        <h2>Direct Channels</h2>
+        <p><strong>Location:</strong> Pahang / Selangor, Malaysia</p>
+        <p><strong>Email:</strong> <a href="mailto:Arifakmal512@outlook.com">Arifakmal512@outlook.com</a></p>
+        <ul class="social-list">
+          <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub Profile</a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
+        </ul>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year">2026</span> Arif Akmal Bin Shahrul Nizam. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    (function () {
+      const form = document.getElementById("contact-form");
+      if (!form) return;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const subjectInput = document.getElementById("subject");
+        const messageInput = document.getElementById("message");
+
+        const nameError = document.getElementById("name-error");
+        const emailError = document.getElementById("email-error");
+        const subjectError = document.getElementById("subject-error");
+        const messageError = document.getElementById("message-error");
+        const statusEl = document.getElementById("form-status");
+
+        const name = nameInput ? nameInput.value.trim() : "";
+        const email = emailInput ? emailInput.value.trim() : "";
+        const subjectText = subjectInput ? subjectInput.value.trim() : "";
+        const message = messageInput ? messageInput.value.trim() : "";
+
+        if (nameError) nameError.textContent = "";
+        if (emailError) emailError.textContent = "";
+        if (subjectError) subjectError.textContent = "";
+        if (messageError) messageError.textContent = "";
+        if (statusEl) statusEl.textContent = "";
+
+        let isValid = true;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!name) {
+          if (nameError) nameError.textContent = "Please enter your full name.";
+          isValid = false;
+        }
+
+        if (!email || !emailPattern.test(email)) {
+          if (emailError) emailError.textContent = "Please enter a valid email address.";
+          isValid = false;
+        }
+
+        if (!message) {
+          if (messageError) messageError.textContent = "Please enter your message.";
+          isValid = false;
+        }
+
+        if (!isValid) {
+          if (statusEl) statusEl.textContent = "Please fix the highlighted fields above.";
+          return;
+        }
+
+        const recipient = "Arifakmal512@outlook.com";
+        const finalSubject = encodeURIComponent(
+          subjectText ? subjectText : `Portfolio Inquiry from ${name}`
+        );
+        const finalBody = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+        );
+
+        if (statusEl) {
+          statusEl.textContent = "Opening your email app...";
+        }
+
+        window.location.href = `mailto:${recipient}?subject=${finalSubject}&body=${finalBody}`;
+      });
+    })();
+  </script>
+</body>
+</html>
