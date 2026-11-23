@@ -233,7 +233,6 @@ function initContactFormValidation() {
   });
 }
 // Validate inputs, then open default email client via mailto: link
-=======
 document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initGreetingAndYear();
