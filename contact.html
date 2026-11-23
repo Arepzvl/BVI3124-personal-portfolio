@@ -135,7 +135,8 @@
           return;
         }
 
-        const recipient = "Arifakmal512@outlook.c
+        const recipient = "Arifakmal512@outlook.com";
+        const finalSubject = encodeURIComponent(
           subjectText ? subjectText : `Portfolio Inquiry from ${name}`
         );
         const finalBody = encodeURIComponent(
@@ -145,8 +146,7 @@
         if (statusEl) {
           statusEl.textContent = "Opening your email app...";
         }
-om";
-        const finalSubject = encodeURIComponent(
+
         window.location.href = `mailto:${recipient}?subject=${finalSubject}&body=${finalBody}`;
       });
     })();
