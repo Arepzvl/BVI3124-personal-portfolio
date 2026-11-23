@@ -1,10 +1,3 @@
-/*
-- Client-side script for BVI3124 Personal Portfolio Website.
-- Handles mobile navigation, greeting/year updates, typing animation,
-- expandable bio section, skill tabs/progress bars, project filter,
-- and contact form validation with mailto: launch.
- */
-
 document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initGreetingAndYear();
