@@ -228,7 +228,7 @@ function initContactFormValidation() {
     }
 
     // Validate inputs, then open default email client via mailto: link
-    const recipient = "Arifakmal512@outlook.com";
+    const recipient = "powerakmalpower@gmail.com";
     const mailSubject = encodeURIComponent(subjectVal);
     const mailBody = encodeURIComponent(
       `Name: ${nameVal}\nEmail: ${emailVal}\n\nMessage:\n${messageVal}`
